@@ -1,5 +1,5 @@
 ---
-managed_users:
+users_managed_users:
   - username: devopsuser
     shell: /bin/bash
     groups: []

@@ -14,4 +14,4 @@
     owner: root
     group: root
     mode: "0644"
-  when: enable_unattended_upgrades
+  when: security_enable_unattended_upgrades
