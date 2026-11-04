@@ -1,0 +1,9 @@
+---
+- name: Create and manage Linux users
+  ansible.builtin.user:
+    name: "{{ item.username }}"
+    shell: "{{ item.shell }}"
+    groups: "{{ item.groups | join(',') if item.groups | length > 0 else omit }}"
+    create_home: "{{ item.create_home }}"
+    state: present
+  loop: "{{ managed_users }}"

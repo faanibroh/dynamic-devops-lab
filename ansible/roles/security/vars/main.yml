@@ -1,0 +1,6 @@
+---
+security_packages:
+  - ufw
+  - unattended-upgrades
+
+enable_unattended_upgrades: true

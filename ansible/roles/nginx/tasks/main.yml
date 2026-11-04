@@ -1,0 +1,31 @@
+---
+- name: Install Nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: true
+
+- name: Enable and start Nginx
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true
+
+- name: Deploy custom website
+  ansible.builtin.copy:
+    content: |
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <title>Dynamic DevOps Lab</title>
+      </head>
+      <body>
+          <h1>Welcome to Dynamic DevOps Lab</h1>
+          <p>Infrastructure provisioned with Terraform.</p>
+          <p>Server configured with Ansible.</p>
+      </body>
+      </html>
+    dest: /var/www/html/index.html
+    owner: www-data
+    group: www-data
+    mode: "0644"

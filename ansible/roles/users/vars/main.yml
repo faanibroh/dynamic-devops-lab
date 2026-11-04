@@ -1,0 +1,6 @@
+---
+managed_users:
+  - username: devopsuser
+    shell: /bin/bash
+    groups: []
+    create_home: true
