@@ -40,12 +40,6 @@ variable "root_volume_size" {
   default     = 8
 }
 
-variable "ssh_allowed_cidr" {
-  description = "CIDR allowed to SSH into the target"
-  type        = string
-  default     = "172.31.0.0/16"
-}
-
 variable "key_name" {
   description = "Existing AWS EC2 key pair"
   type        = string
